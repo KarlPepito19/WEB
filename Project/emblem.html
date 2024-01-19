@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0c1041;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: black;
+            background-size: auto;
+            border: 10px solid #1b1556;
+            border-radius: 10px;
+            padding: 70px 100px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .container1 {
+            background-color: black;
+            background-size: auto;
+            border: 10px solid #1b1556;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .definitions {
+            display: none;
+            text-align: center;
+            color: white;
+        }
+
+        img {
+            width: 15%;
+            height: auto;
+            cursor: pointer;
+            margin: 5px;
+        }
+        nav {
+            width: 100%;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(28, 28, 85);
+            text-decoration: none;
+            border: 3px solid rgb(28, 28, 85);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: rgb(28, 28, 85);
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <h1>
+        <a href="index.html" style="color: white;" class="button">HOMEPAGE</a>
+    </h1>
+</nav>
+    <div class="container">
+        <h1 style="color: #ccc;">EMBLEM TUTORIAL</h1>     
+        <video width="600" controls autoplay>
+            <source src="Emblems.mp4" type="video/mp4">
+            <source src="Emblems.ogg" type="vide/ogg">
+        </video>
+    </div>
+
+    <div class="container1">
+        <div class="definitions" id="assassinDefinition">
+            <p>Custom Assassin: Focused on enhancing physical attack, critical chance, and critical damage. 
+                Suitable for heroes with an assassin playstyle, emphasizing burst damage.</p>
+        </div>
+
+        <div class="definitions" id="marksmanDefinition">
+            <p>Custom Marksman: Geared towards marksmen, providing boosts to physical attack, 
+                critical chance, and critical damage. Enhances the damage output of heroes who 
+                rely on basic attacks.</p>
+        </div>
+
+        <div class="definitions" id="fighterDefinition">
+            <p>Custom Fighter: Designed for fighters, offering bonuses to physical attack, 
+                attack speed, and physical penetration. Suitable for heroes that engage in sustained combat.</p>
+        </div>
+
+        <div class="definitions" id="tankDefinition">
+            <p>Custom Tank: Geared towards tanks, offering increased magic defense, HP, and cooldown reduction. 
+                Enhances survivability and resilience for heroes that act as frontline tanks.</p>
+        </div>
+
+        <div class="definitions" id="mageDefinition">
+            <p>Custom Mage: Tailored for mages, providing increased magic power, magic penetration, 
+                and cooldown reduction. Enhances the magical damage output and ability usage of mage heroes.</p>
+        </div>
+
+        <div class="definitions" id="supportDefinition">
+            <p>Custom Support: Intended for support heroes, providing bonuses to magic power, 
+                cooldown reduction, and movement speed. Enhances the utility and survivability of 
+                support-oriented heroes.</p>
+        </div>
+
+        <img src="Assassin_Icon.jpg" id="assassin" onclick="showDefinition('assassinDefinition')">
+        <img src="Marksman_Icon.jpg" id="marksman" onclick="showDefinition('marksmanDefinition')">
+        <img src="Fighter_Icon.jpg" id="fighter" onclick="showDefinition('fighterDefinition')">
+        <img src="Tank_Icon.jpg" id="tank" onclick="showDefinition('tankDefinition')">
+        <img src="Mage_Icon.jpg" id="mage" onclick="showDefinition('mageDefinition')">
+        <img src="Support_Icon.jpg" id="support" onclick="showDefinition('supportDefinition')">
+    </div>
+
+    <script>
+        function showDefinition(definitionId) {
+            // Hide all definitions
+            var definitions = document.getElementsByClassName('definitions');
+            for (var i = 0; i < definitions.length; i++) {
+                definitions[i].style.display = 'none';
+            }
+
+            // Show the selected definition
+            var selectedDefinition = document.getElementById(definitionId);
+            selectedDefinition.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
